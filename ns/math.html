@@ -23,6 +23,10 @@
   }
   table.rdfs-definition td {vertical-align: top;}
   .bold {font-weight: bold;}
+  .note, .historyNote, .editorialNote {
+    margin-left: 2em;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -36,6 +40,15 @@
 <p>This is an ontology for computable math functions.</p>
 
 <p>The vocabulary is published by the <a href="https://www.w3.org/community/n3-dev/">W3C Notation-3 Community Group</a>.</p>
+
+</div>
+<div class='historyNote'>
+<h2>
+Historical Note
+</h2>
+<p>Schema for CWM&#39;s mathematical built-ins, SBP 2001-12</p>
+
+<p>$Id: math.n3,v 1.12 2010-03-30 15:18:08 timbl Exp $</p>
 
 </div>
 <section>
@@ -53,7 +66,9 @@
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>owl:FunctionalProperty</dd>
+<dd class='subClassOf'>
+owl:FunctionalProperty
+</dd>
 </dl>
 </dd>
 <dt id='math_List'>
@@ -67,7 +82,9 @@ members are math:Value items.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>log:List</dd>
+<dd class='subClassOf'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='math_LogicalOperator'>
@@ -81,7 +98,9 @@ between two values</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>math:ReverseFunction, math:Function</dd>
+<dd class='subClassOf'>
+math:ReverseFunction, math:Function
+</dd>
 </dl>
 </dd>
 <dt id='math_ReverseFunction'>
@@ -94,7 +113,9 @@ between two values</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>owl:InverseFunctionalProperty</dd>
+<dd class='subClassOf'>
+owl:InverseFunctionalProperty
+</dd>
 </dl>
 </dd>
 <dt id='math_StrictProperty'>
@@ -107,7 +128,9 @@ between two values</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>rdf:Property</dd>
+<dd class='subClassOf'>
+rdf:Property
+</dd>
 </dl>
 </dd>
 <dt id='math_TwoMemberedList'>
@@ -120,7 +143,9 @@ between two values</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>math:List</dd>
+<dd class='subClassOf'>
+math:List
+</dd>
 </dl>
 </dd>
 <dt id='math_Value'>
@@ -133,7 +158,9 @@ between two values</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>_:g5540</dd>
+<dd class='subClassOf'>
+_:g5540
+</dd>
 </dl>
 </dd>
 </dl>
@@ -150,10 +177,18 @@ between two values</p>
 <p>The object is calulated as the absolute value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_cos'>
@@ -166,10 +201,18 @@ between two values</p>
 The object is calulated as the cosine value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_cosh'>
@@ -182,10 +225,18 @@ The object is calulated as the cosine value of the subject.</p>
 The object is calulated as the #hyperbolic cosine value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_degrees'>
@@ -198,10 +249,18 @@ The object is calulated as the #hyperbolic cosine value of the subject.</p>
 The object is calulated as the conversion in degrees of the value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_difference'>
@@ -214,10 +273,18 @@ The object is calulated as the conversion in degrees of the value of the subject
 is calculated by subtracting the second number of the pair from the first.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:TwoMemberedList</dd>
+<dd class='domain'>
+math:TwoMemberedList
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_equalTo'>
@@ -227,12 +294,39 @@ is calculated by subtracting the second number of the pair from the first.</p>
 </dt>
 <dd>
 
-
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p><strong>schema</strong>:
+<code>$a1 math:equalTo $a2</code></p>
+
+<p><strong>summary</strong>:
+checks equality of numbers</p>
+
+<p><strong>definition</strong>:
+<code>true</code> if and only if <code>$a1</code> is equal to <code>$a2</code>. 
+Requires both arguments to be either concrete numerals, or variables bound to a numeral.</p>
+
+<p><strong>literal domains</strong>:</p>
+
+<ul>
+<li><code>$a1</code>: <code>xs:decimal</code> (or its derived types), <code>xs:float</code>, or <code>xs:double</code>  (see note on type promotion, and casting from string)</li>
+<li><code>$a2</code>: <code>xs:decimal</code> (or its derived types), <code>xs:float</code>, or <code>xs:double</code>  (see note on type promotion, and casting from string)</li>
+</ul>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_exponentiation'>
@@ -245,10 +339,18 @@ is calculated by subtracting the second number of the pair from the first.</p>
 is calculated by raising the first number of the power of the second.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:TwoMemberedList</dd>
+<dd class='domain'>
+math:TwoMemberedList
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_greaterThan'>
@@ -260,10 +362,18 @@ is calculated by raising the first number of the power of the second.</p>
 <p>True iff the subject is a number which is greater than the object.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_integerQuotient'>
@@ -276,10 +386,18 @@ is calculated by raising the first number of the power of the second.</p>
 is calculated by dividing the first number of the pair by the second, ignoring remainder.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:TwoMemberedList</dd>
+<dd class='domain'>
+math:TwoMemberedList
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_lessThan'>
@@ -291,10 +409,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 <p>True iff the subject is a number which is LESS than a object.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_negation'>
@@ -306,10 +432,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 <p>The subject or object is calculated to be the negation of the other.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_notEqualTo'>
@@ -321,10 +455,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 <p>True iff the subject is a number which is NOT EQUAL to a object.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_notGreaterThan'>
@@ -336,10 +478,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 <p>True iff the subject is a number which is NOT greater than the object.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_notLessThan'>
@@ -351,10 +501,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 <p>True iff the subject is a number which is NOT LESS than a object.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_product'>
@@ -367,10 +525,18 @@ is calculated by dividing the first number of the pair by the second, ignoring r
 The object is calculated as the arithmentic product of those numbers.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:List</dd>
+<dd class='domain'>
+math:List
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_quotient'>
@@ -383,10 +549,18 @@ The object is calculated as the arithmentic product of those numbers.</p>
 is calculated by dividing the first number of the pair by the second.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:TwoMemberedList</dd>
+<dd class='domain'>
+math:TwoMemberedList
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_remainder'>
@@ -399,10 +573,18 @@ is calculated by dividing the first number of the pair by the second.</p>
 is calculated by dividing the first number of the pair by the second and taking the remainder.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:TwoMemberedList</dd>
+<dd class='domain'>
+math:TwoMemberedList
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_rounded'>
@@ -414,10 +596,18 @@ is calculated by dividing the first number of the pair by the second and taking 
 <p>The object is calulated as the subject rounded to the nearest integer.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_sin'>
@@ -430,10 +620,18 @@ is calculated by dividing the first number of the pair by the second and taking 
 The object is calulated as the sine value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_sinh'>
@@ -446,10 +644,18 @@ The object is calulated as the sine value of the subject.</p>
 The object is calulated as the hyperbolic sine value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_sum'>
@@ -459,12 +665,44 @@ The object is calulated as the hyperbolic sine value of the subject.</p>
 </dt>
 <dd>
 
-
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p><strong>schema</strong>:
+<code>($a_1 .. $a_n) math:sum $a_s</code></p>
+
+<p><strong>summary</strong>:
+performs addition of numbers</p>
+
+<p><strong>definition</strong>:
+<code>true</code> if and only if the arithmetic sum of <code>$a_1, .. $a_n</code> equals <code>$a_s</code>.
+Requires either:</p>
+
+<ol>
+<li>all <code>$a_1, .., $a_n</code> to be bound; or</li>
+<li>all but one <code>$a_i</code> (subject list) to be bound, and <code>$a_s</code> to be bound.</li>
+</ol>
+
+<p><strong>literal domains</strong>:</p>
+
+<ul>
+<li><code>$a_1 .. $a_n</code> : <code>xs:decimal</code> (or its derived types), <code>xs:float</code>, or <code>xs:double</code> (see note on type promotion, and casting from string)</li>
+<li><code>$a_s</code>: <code>xs:decimal</code> (or its derived types), <code>xs:float</code>, or <code>xs:double</code> (see note on type promotion, and casting from string)</li>
+</ul>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_tan'>
@@ -477,10 +715,18 @@ The object is calulated as the hyperbolic sine value of the subject.</p>
 The object is calulated as the tangent value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 <dt id='math_tanh'>
@@ -493,10 +739,18 @@ The object is calulated as the tangent value of the subject.</p>
 The object is calulated as the hyperbolic tangent value of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>math:Value</dd>
+<dd class='domain'>
+math:Value
+</dd>
 <dt>rdfs:range</dt>
-<dd>math:Value</dd>
+<dd class='range'>
+math:Value
+</dd>
 </dl>
 </dd>
 </dl>

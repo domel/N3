@@ -4,7 +4,7 @@
 <title>n3 definition of some list functions</title>
 <link href='http://www.w3.org/StyleSheets/TR/base' rel='stylesheet'>
 <style>
-  body: {bacground-image: none;}
+  body {bacground-image: none;}
   dt {margin-top: 2em; font-weight: normal;}
   dd code {display: inline;}
   footer {text-align: center;}
@@ -151,15 +151,15 @@ and if that element and <code>$a_m</code> can unify.</p>
 <code>$a_i</code> or <code>$a_m</code> (or both) must be bound.</p>
 
 <p>Note that if <code>$a_i</code> is a variable, this builtin may bind it to more than one value
-(e.g. <code>((“A” “B” “A”) ?i) list:memberAt &quot;A&quot;</code>).</p>
+(e.g. <code>((“A” “B” “A”) ?i) list:memberAt "A"</code>).</p>
 
 <p><strong>literal domains</strong>:</p>
 
 <ul>
-<li><code>$a_1 .. $a_n</code>, <code>$a_m</code>: unconstrained</li>
-<li><code>$a_i</code>: <code>xs:decimal</code>, <code>xs:float</code>, <code>xs:double</code> within the value space of <code>xs:integer</code>
+  <li><code>$a_1 .. $a_n</code>, <code>$a_m</code>: unconstrained</li>
+  <li><code>$a_i</code>: <code>xs:decimal</code>, <code>xs:float</code>, <code>xs:double</code> within the value space of <code>xs:integer</code>
 (see also note on type promotion and substitution).
-I.e., in case the double/float/decimal&#39;s literal&#39;s value is within the value space of integers,
+I.e., in case the double/float/decimal's literal's value is within the value space of integers,
 the literal will match the domain.
 In case of a negative integer, the index will count backwards from the length of the list.</li>
 </ul>
@@ -195,9 +195,9 @@ The object can be calculated as a function of the subject.</p>
 </dl>
 </section>
 </section>
-</body>
 <footer>
 <p>All vocabularies are licensed by contributors under the
 <a href="http://www.w3.org/Consortium/Legal/copyright-software">W3C Software and Document License</a>.</p>
 </footer>
+</body>
 </html>

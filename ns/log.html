@@ -4,7 +4,7 @@
 <title>n3 definition of some Semantic Web terms</title>
 <link href='http://www.w3.org/StyleSheets/TR/base' rel='stylesheet'>
 <style>
-  body: {bacground-image: none;}
+  body {bacground-image: none;}
   dt {margin-top: 2em; font-weight: normal;}
   dd code {display: inline;}
   footer {text-align: center;}
@@ -33,8 +33,8 @@
 </p>
 <h1>n3 definition of some Semantic Web terms</h1>
 <div>
-<p>These raise the level above RDF&#39;s pure relational data,
-and Web Ontology&#39;s ontological level, to allow rules to be expressed
+<p>These raise the level above RDF's pure relational data,
+and Web Ontology's ontological level, to allow rules to be expressed
 and inference done. They connect the inference to the web,
 allowing data to be fetched from resources elsewhere, and remote
 servers to be queried.</p>
@@ -54,7 +54,7 @@ servers to be queried.</p>
 </dt>
 <dd>
 <p>Any statement mentioning anything in this class
-is considered boring and purged by the cwm --purge option.
+is considered boring and purged by the cwm –purge option.
 This is a convenience, and does not have any value when published as a
 general fact on the web.</p>
 
@@ -97,10 +97,6 @@ and this schema, conveys the intent of the author by the semantics defined
 on those specifications, and the semantics defined by the specifications
 of any other identifiers used in the document.</p>
 
-<dl class='annotations'>
-<dt>rdfs:subClassOf</dt>
-<dd>http://www.w3.org/2000/10/swap/pim/doc#Work</dd>
-</dl>
 </dd>
 <dt id='log_Other'>
 <strong>log:Other</strong>
@@ -125,7 +121,7 @@ of any other identifiers used in the document.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>rdfs:Literal, log:Type</dd>
+<dd>log:Type, rdfs:Literal</dd>
 </dl>
 </dd>
 <dt id='log_Truth'>
@@ -135,9 +131,6 @@ of any other identifiers used in the document.</p>
 </dt>
 <dd>
 <p>Something which is true: believe it as you would believe this.</p>
-
-<p>Understood natively by cwm in that it will execute rules in a formula
-declared a Truth within a formula it is already taking rules from.</p>
 
 </dd>
 <dt id='log_Type'>
@@ -181,10 +174,7 @@ declared a Truth within a formula it is already taking rules from.</p>
 
 <p>The object of this function, a formula, is the set of conclusions which can be
 drawn from the subject formula, by successively applying any
-rules it contains to the data it contains. This is equivalent to
-cwm&#39;s &quot;--think&quot; command line function.  It does use built-ins, so
-it may for example indirectly invoke other documents, validate
-signatures, etc.</p>
+rules it contains to the data it contains.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -203,8 +193,7 @@ signatures, etc.</p>
 
 <p>The subject is a list of formulae.
 The object, which can be generated, is a formula containing a copy
-of each of the formulae in the list on the left.
-A cwm built-in function.</p>
+of each of the formulae in the list on the left.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -219,14 +208,11 @@ A cwm built-in function.</p>
 <span class='permalink'><a href='#log_content' title='Permalink for log:content'>(link)</a></span>
 </dt>
 <dd>
-<p>This connects a document and a string that represents it.
-(Cwm knows how to go get a document in order to evaluate this.)
-Note that the content-type of the information is not given and
-so must be known or guessed.</p>
+<p>This connects a document and a string that represents it.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
-<dd>http://www.w3.org/2000/10/swap/pim/doc#Work</dd>
+<dd>log:N3Document</dd>
 <dt>rdfs:range</dt>
 <dd>log:String</dd>
 </dl>
@@ -241,16 +227,11 @@ so must be known or guessed.</p>
 any statement X P Y is true iff the semantics of document D
 include that statement.</p>
 
-<p>For example, there may be a definitive document for the zipcode of
-airports by airport code, and so on. This is useful to let a reasoner
-know that it can extend its query to the given document.
-(Cwm will do this if its mode includes &quot;r&quot;).</p>
-
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
 <dd>rdf:Property</dd>
 <dt>rdfs:range</dt>
-<dd>http://www.w3.org/2000/10/swap/pim/doc#Work</dd>
+<dd>log:N3Document</dd>
 <dt>vs:term_status</dt>
 <dd>deprecated</dd>
 </dl>
@@ -267,12 +248,6 @@ that it is.  The protocol for the service S depends on the scheme.
 For mysql protocol, the URI of the service is like
 <code>sql://user:password@host.domain/database/</code>.</p>
 
-<p>For example, there may be a definitive service for the zipcode of
-airports by airport code, and so on. This is useful to let a reasoner
-know that it can help resolve a query by delegating it to the service
-in question.
-(Cwm will do this if its mode includes &quot;r&quot;).</p>
-
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
 <dd>rdf:Property</dd>
@@ -286,9 +261,7 @@ in question.
 <span class='permalink'><a href='#log_dtlit' title='Permalink for log:dtlit'>(link)</a></span>
 </dt>
 <dd>
-<p>Takes a list of a string and a URI and creates a datatyped literal.
-For example, <code>{ (&quot;2005-03-30T11:00:00&quot; :tz) log:dtlit ?X } =&gt; { ?X a :Answer } .</code>
-will produce <code>&quot;2005-03-30T11:00:00&quot;^^:tz a :Answer .</code></p>
+<p>Takes a list of a string and a URI and creates a datatyped literal.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -305,9 +278,7 @@ will produce <code>&quot;2005-03-30T11:00:00&quot;^^:tz a :Answer .</code></p>
 <span class='permalink'><a href='#log_equalTo' title='Permalink for log:equalTo'>(link)</a></span>
 </dt>
 <dd>
-<p>True if the subject and object are the same RDF node (symbol or literal).
-Do not confuse with owl:sameAs.
-A cwm built-in logical operator, RDF graph level.</p>
+<p>True if the subject and object are the same RDF node (symbol or literal).</p>
 
 </dd>
 <dt id='log_findall'>
@@ -370,11 +341,6 @@ gives a formula which is a subset of the knowledge-base,
 then the result of applying that same substitution to the
 conclusion may be added to the knowledge-base.</p>
 
-<p>related: See log:conclusion. 
-(See the CWM manual for command line options to determine how
-rules from different sources are applied to and the results
-added to various formula.)</p>
-
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
 <dd>log:Formula</dd>
@@ -390,16 +356,13 @@ added to various formula.)</p>
 <dd>
 <p>The subject formula includes the object formula.
 Formula A includes formula B if there exists some substitution
-which when applied to B creates a formula B&#39; such that for
-every statement in B&#39; is also in A, every variable
-universally (or existentially) quantified in B&#39; is quantified in
-the same way in A. </p>
+which when applied to B creates a formula B' such that for
+every statement in B' is also in A, every variable
+universally (or existentially) quantified in B' is quantified in
+the same way in A.</p>
 
 <p>Variable substitution is applied recursively to nested compound terms such as
 formulae, lists and sets.</p>
-
-<p>(Understood natively by cwm when in in the antecedent of a rule.
-You can use this to peer inside nested formulae.)</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -429,8 +392,7 @@ You can use this to peer inside nested formulae.)</p>
 <span class='permalink'><a href='#log_notEqualTo' title='Permalink for log:notEqualTo'>(link)</a></span>
 </dt>
 <dd>
-<p>Equality in this sense is actually the same URI.
-A cwm built-in logical operator.</p>
+<p>Equality in this sense is actually the same URI.</p>
 
 <dl class='annotations'>
 <dt>owl:inverse</dt>
@@ -471,12 +433,7 @@ A cwm built-in logical operator.</p>
 <dd>
 <p>The object formula is NOT a subset of subject.
 True iff log:includes is false.
-The converse of log:includes. (Understood natively by cwm.
-The subject formula may contain variables.
-(In cwm, variables must of course end up getting bound
-before the log:include test can be done, or an infinite result set
-would result)
-Related: See includes</p>
+The converse of log:includes.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -492,8 +449,7 @@ Related: See includes</p>
 </dt>
 <dd>
 <p>The subject is a key and the object is a string,
-where the strings are to be output in the order of the keys.
-See cwm --strings in cwm --help.</p>
+where the strings are to be output in the order of the keys.</p>
 
 <dl class='annotations'>
 <dt>rdfs:range</dt>
@@ -534,10 +490,7 @@ For anything else, it is itself.</p>
 <span class='permalink'><a href='#log_rawType' title='Permalink for log:rawType'>(link)</a></span>
 </dt>
 <dd>
-<p>This is a low-level language type, one of log:Formula, log:Literal, 
-log:List, log:Set or log:Other. 
-Example: log:semanticsOrError returns either a formula or a string,
-and you can check which using log:rawType.</p>
+<p>This is a low-level language type, one of log:Formula, log:Literal, log:List, log:Set or log:Other.</p>
 
 <dl class='annotations'>
 <dt>rdfs:range</dt>
@@ -550,9 +503,7 @@ and you can check which using log:rawType.</p>
 <span class='permalink'><a href='#log_rawUri' title='Permalink for log:rawUri'>(link)</a></span>
 </dt>
 <dd>
-<p>This allows one to look at the actual string of the URI which identifies this,
-for anything, even a blank node or a formula. This peeks into the internal
-workings of cwm, and so is not normally used. Use log:uri instead.</p>
+<p>This allows one to look at the actual string of the URI which identifies this, for anything, even a blank node or a formula.</p>
 
 <dl class='annotations'>
 <dt>rdfs:range</dt>
@@ -575,14 +526,14 @@ appropriate specification to yield an RDF formula
 Evaluates to false if an unrecognized document format is retrieved.</p>
 
 <p>[Aside: Philosophers will be distracted here into worrying about the meaning
-of meaning. At least we didn&#39;t call this function &quot;meaning&quot;!
+of meaning. At least we didn't call this function "meaning"!
 In as much as N3 is used as an interlingua for interoperability
 for different systems, this for an N3 based system is the meaning 
 expressed by a document.]</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
-<dd>http://www.w3.org/2000/10/swap/pim/doc#Work</dd>
+<dd>log:N3Document</dd>
 <dt>rdfs:range</dt>
 <dd>log:Formula</dd>
 </dl>
@@ -594,12 +545,11 @@ expressed by a document.]</p>
 </dt>
 <dd>
 <p>This connects a document and either the formula it parses to,
-or an error message explaining what went wrong with trying. See log:semantics.
-(Cwm knows how to go get a document and parse it in order to evaluate this.)</p>
+or an error message explaining what went wrong with trying. See log:semantics.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
-<dd>http://www.w3.org/2000/10/swap/pim/doc#Work</dd>
+<dd>log:N3Document</dd>
 </dl>
 </dd>
 <dt id='log_skolem'>
@@ -626,11 +576,6 @@ or an error message explaining what went wrong with trying. See log:semantics.
 </dt>
 <dd>
 <p>This allows one to look at the actual string of the URI which identifies this.</p>
-
-<p>(Cwm can get the URI of a resource or get the resource from the URI.)
-This is a level breaker, breaking the rule of not looking inside a
-URI.   Use (eg with  string:match) to replace RDF&#39;s old &quot;aboutEach&quot;
-functionality. Use to implement the URI spec and protocol specs, etc.</p>
 
 <dl class='annotations'>
 <dt>rdfs:range</dt>
@@ -662,9 +607,9 @@ The value of log:content of a log:N3Document is a literal with datatype log:N3.<
 </dl>
 </section>
 </section>
-</body>
 <footer>
 <p>All vocabularies are licensed by contributors under the
 <a href="http://www.w3.org/Consortium/Legal/copyright-software">W3C Software and Document License</a>.</p>
 </footer>
+</body>
 </html>

@@ -4,7 +4,7 @@
 <title>n3 definition of some time and date functions</title>
 <link href='http://www.w3.org/StyleSheets/TR/base' rel='stylesheet'>
 <style>
-  body: {bacground-image: none;}
+  body {bacground-image: none;}
   dt {margin-top: 2em; font-weight: normal;}
   dd code {display: inline;}
   footer {text-align: center;}
@@ -85,8 +85,8 @@ the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
 result of formatting the Universal Time of processing in the format given.
 If the format string has zero length,
 then the ISOdate standard format is used. 
-<code>[ is time:gmtime of &quot;&quot;]</code>  the therefore the current date time.
-It will end with &quot;Z&quot; as a timezone code.
+<code>[ is time:gmtime of ""]</code>  the therefore the current date time.
+It will end with "Z" as a timezone code.
 the <em>object</em> can be calculated as a function of the <em>subject</em>.
 Rules which use this function will of course NOT be repeatable.</p>
 
@@ -120,11 +120,8 @@ the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
 </dt>
 <dd>
 <p>Iff the <em>subject</em> is a <code>xsd:dateTime</code> and the <em>object</em> is the integer number of seconds
-since the beginning of the era on a given system.  Don&#39;t assume a particular value, always test for it.
+since the beginning of the era on a given system.  Don't assume a particular value, always test for it.
 the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
-
-<p>Cwm implements this as a bidirectional function: you can calculate the
-ISO date from the seconds since the beginning of the era, or vice-versa.</p>
 
 <dl class='annotations'>
 <dt>rdfs:domain</dt>
@@ -143,8 +140,8 @@ ISO date from the seconds since the beginning of the era, or vice-versa.</p>
 result of formatting the current time of processing and local timezone in the format given.
 If the format string has zero length,
 then the ISOdate standard format is used. 
-<code>[ is time:gmtime of &quot;&quot;]</code>  the therefore the current date time.
-It will end with &quot;Z&quot; as a timezone code.
+<code>[ is time:gmtime of ""]</code>  the therefore the current date time.
+It will end with "Z" as a timezone code.
 the <em>object</em> can be calculated as a function of the <em>subject</em>.
 Rules which use this function will of course NOT be repeatable.</p>
 
@@ -210,7 +207,7 @@ the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
 </dt>
 <dd>
 <p>Iff the <em>subject</em> is a <code>xsd:dateTime</code> and the <em>object</em> is the trailing timezone offset
-part, e.g.  &quot;-05:00&quot;..
+part, e.g.  "-05:00"..
 the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
 
 <dl class='annotations'>
@@ -239,9 +236,9 @@ the <em>object</em> can be calculated as a function of the <em>subject</em>.</p>
 </dl>
 </section>
 </section>
-</body>
 <footer>
 <p>All vocabularies are licensed by contributors under the
 <a href="http://www.w3.org/Consortium/Legal/copyright-software">W3C Software and Document License</a>.</p>
 </footer>
+</body>
 </html>

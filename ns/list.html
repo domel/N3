@@ -23,6 +23,10 @@
   }
   table.rdfs-definition td {vertical-align: top;}
   .bold {font-weight: bold;}
+  .note, .historyNote, .editorialNote {
+    margin-left: 2em;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -36,6 +40,15 @@
 <p>This is an ontology for computable list functions.</p>
 
 <p>The vocabulary is published by the <a href="https://www.w3.org/community/n3-dev/">W3C Notation-3 Community Group</a>.</p>
+
+</div>
+<div class='historyNote'>
+<h2>
+Historical Note
+</h2>
+<p>n3 definition of some list functions</p>
+
+<p>$Id: list.n3,v 1.3 2010-03-26 20:41:54 timbl Exp $</p>
 
 </div>
 <section>
@@ -55,8 +68,14 @@ eg  ( (1 2) (3 4) ) list:append (1 2 3 4).
 The object can be calculated as a function of the subject.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre>( (1 2) (3 4) ) list:append (1 2 3 4).</pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_first'>
@@ -69,10 +88,18 @@ The object can be calculated as a function of the subject.</p>
 The object can be calculated as a function of the list.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_in'>
@@ -85,7 +112,9 @@ The object can be calculated as a function of the list.</p>
 
 <dl class='annotations'>
 <dt>rdfs:range</dt>
-<dd>log:List</dd>
+<dd class='range'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_last'>
@@ -98,8 +127,14 @@ The object can be calculated as a function of the list.</p>
 The object can be calculated as a function of the list.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_length'>
@@ -112,12 +147,18 @@ The object can be calculated as a function of the list.</p>
 The object can be calculated as a function of the list.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
-<dt>rdfs:range</dt>
-<dd>xsd:integer</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+xsd:integer
+</dd>
 </dl>
 </dd>
 <dt id='list_member'>
@@ -129,8 +170,14 @@ The object can be calculated as a function of the list.</p>
 <p>Iff the subject is a list and the object is in that list, then this is true.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_memberAt'>
@@ -151,24 +198,32 @@ and if that element and <code>$a_m</code> can unify.</p>
 <code>$a_i</code> or <code>$a_m</code> (or both) must be bound.</p>
 
 <p>Note that if <code>$a_i</code> is a variable, this builtin may bind it to more than one value
-(e.g. <code>((“A” “B” “A”) ?i) list:memberAt "A"</code>).</p>
+(e.g. <code>((“A” “B” “A”) ?i) list:memberAt &quot;A&quot;</code>).</p>
 
 <p><strong>literal domains</strong>:</p>
 
 <ul>
-  <li><code>$a_1 .. $a_n</code>, <code>$a_m</code>: unconstrained</li>
-  <li><code>$a_i</code>: <code>xs:decimal</code>, <code>xs:float</code>, <code>xs:double</code> within the value space of <code>xs:integer</code>
+<li><code>$a_1 .. $a_n</code>, <code>$a_m</code>: unconstrained</li>
+<li><code>$a_i</code>: <code>xs:decimal</code>, <code>xs:float</code>, <code>xs:double</code> within the value space of <code>xs:integer</code>
 (see also note on type promotion and substitution).
-I.e., in case the double/float/decimal's literal's value is within the value space of integers,
+I.e., in case the double/float/decimal&#39;s literal&#39;s value is within the value space of integers,
 the literal will match the domain.
 In case of a negative integer, the index will count backwards from the length of the list.</li>
 </ul>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='list_remove'>
@@ -184,12 +239,22 @@ eg ( (1 2 3 4) (2 3) ) list:remove (1 4).
 The object can be calculated as a function of the subject.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
-<dt>rdfs:range</dt>
-<dd>log:List</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre>( (1 2 3 4) (2 3) ) list:remove (1 4)</pre>
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+log:List
+</dd>
 </dl>
 </dd>
 </dl>

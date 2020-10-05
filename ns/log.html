@@ -23,6 +23,10 @@
   }
   table.rdfs-definition td {vertical-align: top;}
   .bold {font-weight: bold;}
+  .note, .historyNote, .editorialNote {
+    margin-left: 2em;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -33,13 +37,28 @@
 </p>
 <h1>n3 definition of some Semantic Web terms</h1>
 <div>
-<p>These raise the level above RDF's pure relational data,
-and Web Ontology's ontological level, to allow rules to be expressed
+<p>These raise the level above RDF&#39;s pure relational data,
+and Web Ontology&#39;s ontological level, to allow rules to be expressed
 and inference done. They connect the inference to the web,
 allowing data to be fetched from resources elsewhere, and remote
 servers to be queried.</p>
 
 <p>The vocabulary is published by the <a href="https://www.w3.org/community/n3-dev/">W3C Notation-3 Community Group</a>.</p>
+
+</div>
+<div class='historyNote'>
+<h2>
+Historical Note
+</h2>
+<p>n3 definition of some Semantic Web terms</p>
+
+<p>These raise the level above RDF&#39;s pure relational data,
+and Web Ontology&#39;s ontological level, to allow rules to be expressed
+and inference done. They connect the inference to the web,
+allowing data to be fetched from resources elsewhere, and remote
+servers to be queried.</p>
+
+<p>$Id: log.n3,v 1.25 2010-03-26 20:35:14 timbl Exp $</p>
 
 </div>
 <section>
@@ -54,7 +73,7 @@ servers to be queried.</p>
 </dt>
 <dd>
 <p>Any statement mentioning anything in this class
-is considered boring and purged by the cwm –purge option.
+is considered boring and purged by the cwm --purge option.
 This is a convenience, and does not have any value when published as a
 general fact on the web.</p>
 
@@ -69,7 +88,9 @@ general fact on the web.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>log:Type</dd>
+<dd class='subClassOf'>
+log:Type
+</dd>
 </dl>
 </dd>
 <dt id='log_List'>
@@ -82,7 +103,9 @@ general fact on the web.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>log:Type, rdf:List</dd>
+<dd class='subClassOf'>
+log:Type, rdf:List
+</dd>
 </dl>
 </dd>
 <dt id='log_N3Document'>
@@ -108,7 +131,9 @@ of any other identifiers used in the document.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>log:Type</dd>
+<dd class='subClassOf'>
+log:Type
+</dd>
 </dl>
 </dd>
 <dt id='log_String'>
@@ -121,7 +146,9 @@ of any other identifiers used in the document.</p>
 
 <dl class='annotations'>
 <dt>rdfs:subClassOf</dt>
-<dd>log:Type, rdfs:Literal</dd>
+<dd class='subClassOf'>
+log:Type, rdfs:Literal
+</dd>
 </dl>
 </dd>
 <dt id='log_Truth'>
@@ -132,6 +159,13 @@ of any other identifiers used in the document.</p>
 <dd>
 <p>Something which is true: believe it as you would believe this.</p>
 
+<dl class='annotations'>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>Understood natively by cwm in that it will execute rules in a formula declared a Truth within a formula it is already taking rules from.</p>
+
+</dd>
+</dl>
 </dd>
 <dt id='log_Type'>
 <strong>log:Type</strong>
@@ -143,7 +177,9 @@ of any other identifiers used in the document.</p>
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 </dl>
@@ -161,7 +197,9 @@ of any other identifiers used in the document.</p>
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 <dt id='log_conclusion'>
@@ -177,10 +215,26 @@ drawn from the subject formula, by successively applying any
 rules it contains to the data it contains.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>This is equivalent to
+cwm&#39;s &quot;--think&quot; command line function.  It does use built-ins, so
+it may for example indirectly invoke other documents, validate
+signatures, etc.</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
+<dd class='domain'>
+log:Formula
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_conjunction'>
@@ -196,10 +250,23 @@ The object, which can be generated, is a formula containing a copy
 of each of the formulae in the list on the left.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>A cwm built-in function.</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_content'>
@@ -211,10 +278,28 @@ of each of the formulae in the list on the left.</p>
 <p>This connects a document and a string that represents it.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>Note that the content-type of the information is not given and so must be known or guessed.</p>
+
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Cwm knows how to go get a document in order to evaluate this.)</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:N3Document</dd>
+<dd class='domain'>
+log:N3Document
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='log_definitiveDocument'>
@@ -228,12 +313,30 @@ any statement X P Y is true iff the semantics of document D
 include that statement.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>rdf:Property</dd>
-<dt>rdfs:range</dt>
-<dd>log:N3Document</dd>
 <dt>vs:term_status</dt>
-<dd>deprecated</dd>
+<dd class='term_status'>
+deprecated
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>For example, there may be a definitive document for the zipcode of
+airports by airport code, and so on. This is useful to let a reasoner
+know that it can extend its query to the given document.</p>
+
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Cwm will do this if its mode includes &quot;r&quot;).</p>
+
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+rdf:Property
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+log:N3Document
+</dd>
 </dl>
 </dd>
 <dt id='log_definitiveService'>
@@ -249,10 +352,27 @@ For mysql protocol, the URI of the service is like
 <code>sql://user:password@host.domain/database/</code>.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>rdf:Property</dd>
 <dt>vs:term_status</dt>
-<dd>deprecated</dd>
+<dd class='term_status'>
+deprecated
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>For example, there may be a definitive service for the zipcode of
+airports by airport code, and so on. This is useful to let a reasoner
+know that it can help resolve a query by delegating it to the service
+in question.</p>
+
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Cwm will do this if its mode includes &quot;r&quot;).</p>
+
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+rdf:Property
+</dd>
 </dl>
 </dd>
 <dt id='log_dtlit'>
@@ -264,12 +384,23 @@ For mysql protocol, the URI of the service is like
 <p>Takes a list of a string and a URI and creates a datatyped literal.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
-<dt>rdfs:range</dt>
-<dd>rdfs:Literal</dd>
 <dt>vs:term_status</dt>
-<dd>deprecated</dd>
+<dd class='term_status'>
+deprecated
+</dd>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre>`{ ("2005-03-30T11:00:00" :tz) log:dtlit ?X } => { ?X a :Answer } .`
+will produce `"2005-03-30T11:00:00"^^:tz a :Answer .`</pre>
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+rdfs:Literal
+</dd>
 </dl>
 </dd>
 <dt id='log_equalTo'>
@@ -280,6 +411,22 @@ For mysql protocol, the URI of the service is like
 <dd>
 <p>True if the subject and object are the same RDF node (symbol or literal).</p>
 
+<dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>Do not confuse with owl:sameAs.</p>
+
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>A cwm built-in logical operator, RDF graph level.</p>
+
+</dd>
+</dl>
 </dd>
 <dt id='log_findall'>
 <strong>log:findall</strong>
@@ -292,12 +439,18 @@ Within the subject <code>?SCOPE</code> it unifies <code>?ANSWER</code> with a li
 all the instantiations of <code>?SELECT</code> satisfying the <code>?WHERE</code> clause.</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
-<dt>rdfs:range</dt>
-<dd>log:List</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:Formula
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+log:List
+</dd>
 </dl>
 </dd>
 <dt id='log_forAllIn'>
@@ -310,7 +463,9 @@ all the instantiations of <code>?SELECT</code> satisfying the <code>?WHERE</code
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 <dt id='log_forAllInClosure'>
@@ -323,7 +478,9 @@ all the instantiations of <code>?SELECT</code> satisfying the <code>?WHERE</code
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 <dt id='log_implies'>
@@ -342,10 +499,26 @@ then the result of applying that same substitution to the
 conclusion may be added to the knowledge-base.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>related: See log:conclusion. 
+(See the CWM manual for command line options to determine how
+rules from different sources are applied to and the results
+added to various formula.)</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
+<dd class='domain'>
+log:Formula
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_includes'>
@@ -356,19 +529,33 @@ conclusion may be added to the knowledge-base.</p>
 <dd>
 <p>The subject formula includes the object formula.
 Formula A includes formula B if there exists some substitution
-which when applied to B creates a formula B' such that for
-every statement in B' is also in A, every variable
-universally (or existentially) quantified in B' is quantified in
-the same way in A.</p>
+which when applied to B creates a formula B&#39; such that for
+every statement in B&#39; is also in A, every variable
+universally (or existentially) quantified in B&#39; is quantified in
+the same way in A. </p>
 
 <p>Variable substitution is applied recursively to nested compound terms such as
 formulae, lists and sets.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Understood natively by cwm when in in the antecedent of a rule.
+You can use this to peer inside nested formulae.)</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
+<dd class='domain'>
+log:Formula
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_n3String'>
@@ -380,10 +567,18 @@ formulae, lists and sets.</p>
 <p>The subject formula, expressed as N3, gives this string.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
+<dd class='domain'>
+log:Formula
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:N3</dd>
+<dd class='range'>
+log:N3
+</dd>
 </dl>
 </dd>
 <dt id='log_notEqualTo'>
@@ -396,7 +591,18 @@ formulae, lists and sets.</p>
 
 <dl class='annotations'>
 <dt>owl:inverse</dt>
-<dd>log:equalTo</dd>
+<dd class='inverse'>
+log:equalTo
+</dd>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>A cwm built-in logical operator.</p>
+
+</dd>
 </dl>
 </dd>
 <dt id='log_notIn'>
@@ -409,7 +615,9 @@ formulae, lists and sets.</p>
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 <dt id='log_notInClosure'>
@@ -422,7 +630,9 @@ formulae, lists and sets.</p>
 
 <dl class='annotations'>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
 </dl>
 </dd>
 <dt id='log_notIncludes'>
@@ -436,10 +646,28 @@ True iff log:includes is false.
 The converse of log:includes.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Understood natively by cwm.
+The subject formula may contain variables.
+(In cwm, variables must of course end up getting bound
+before the log:include test can be done, or an infinite result set
+would result)
+Related: See includes</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:Formula</dd>
+<dd class='domain'>
+log:Formula
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_outputString'>
@@ -452,10 +680,19 @@ The converse of log:includes.</p>
 where the strings are to be output in the order of the keys.</p>
 
 <dl class='annotations'>
-<dt>rdfs:range</dt>
-<dd>log:String</dd>
 <dt>vs:term_status</dt>
-<dd>deprecated</dd>
+<dd class='term_status'>
+deprecated
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>See cwm --strings in cwm --help.</p>
+
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='log_parsedAsN3'>
@@ -467,10 +704,18 @@ where the strings are to be output in the order of the keys.</p>
 <p>The subject string, parsed as N3, gives this formula.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:N3</dd>
+<dd class='domain'>
+log:N3
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_racine'>
@@ -493,8 +738,19 @@ For anything else, it is itself.</p>
 <p>This is a low-level language type, one of log:Formula, log:Literal, log:List, log:Set or log:Other.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>log:semanticsOrError returns either a formula or a string, and you can check which using log:rawType.</p>
+
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Type</dd>
+<dd class='range'>
+log:Type
+</dd>
 </dl>
 </dd>
 <dt id='log_rawUri'>
@@ -506,8 +762,19 @@ For anything else, it is itself.</p>
 <p>This allows one to look at the actual string of the URI which identifies this, for anything, even a blank node or a formula.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>This peeks into the internal workings of cwm, and so is not normally used. Use log:uri instead.</p>
+
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='log_semantics'>
@@ -526,16 +793,24 @@ appropriate specification to yield an RDF formula
 Evaluates to false if an unrecognized document format is retrieved.</p>
 
 <p>[Aside: Philosophers will be distracted here into worrying about the meaning
-of meaning. At least we didn't call this function "meaning"!
+of meaning. At least we didn&#39;t call this function &quot;meaning&quot;!
 In as much as N3 is used as an interlingua for interoperability
 for different systems, this for an N3 based system is the meaning 
 expressed by a document.]</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:N3Document</dd>
+<dd class='domain'>
+log:N3Document
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:Formula</dd>
+<dd class='range'>
+log:Formula
+</dd>
 </dl>
 </dd>
 <dt id='log_semanticsOrError'>
@@ -548,8 +823,15 @@ expressed by a document.]</p>
 or an error message explaining what went wrong with trying. See log:semantics.</p>
 
 <dl class='annotations'>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Cwm knows how to go get a document and parse it in order to evaluate this.)</p>
+
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:N3Document</dd>
+<dd class='domain'>
+log:N3Document
+</dd>
 </dl>
 </dd>
 <dt id='log_skolem'>
@@ -561,12 +843,18 @@ or an error message explaining what went wrong with trying. See log:semantics.</
 <p>Built-in to generate a Skolem IRI object which is a function of the arguments in the subject list</p>
 
 <dl class='annotations'>
-<dt>rdfs:domain</dt>
-<dd>log:List</dd>
-<dt>rdfs:range</dt>
-<dd>log:String</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>rdfs:domain</dt>
+<dd class='domain'>
+log:List
+</dd>
+<dt>rdfs:range</dt>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='log_uri'>
@@ -578,8 +866,26 @@ or an error message explaining what went wrong with trying. See log:semantics.</
 <p>This allows one to look at the actual string of the URI which identifies this.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
+<dt>skos:note</dt>
+<dd class='note'>
+<p>This is a level breaker, breaking the rule of not looking inside a
+URI.   Use (eg with  string:match) to replace RDF&#39;s old &quot;aboutEach&quot;
+functionality. Use to implement the URI spec and protocol specs, etc.</p>
+
+</dd>
+<dt>skos:editorialNote</dt>
+<dd class='editorialNote'>
+<p>(Cwm can get the URI of a resource or get the resource from the URI.)</p>
+
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 </dl>
@@ -598,10 +904,14 @@ log:N3 is an instance of rdfs:Datatype and a subclass of rdfs:Literal.
 The value of log:content of a log:N3Document is a literal with datatype log:N3.</p>
 
 <dl class='annotations'>
-<dt>rdfs:subClassOf</dt>
-<dd>rdfs:Literal</dd>
 <dt>vs:term_status</dt>
-<dd>unstable</dd>
+<dd class='term_status'>
+unstable
+</dd>
+<dt>rdfs:subClassOf</dt>
+<dd class='subClassOf'>
+rdfs:Literal
+</dd>
 </dl>
 </dd>
 </dl>

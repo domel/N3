@@ -23,6 +23,10 @@
   }
   table.rdfs-definition td {vertical-align: top;}
   .bold {font-weight: bold;}
+  .note, .historyNote, .editorialNote {
+    margin-left: 2em;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -39,6 +43,13 @@ It is implemented, for example, in CWM and Euler.</p>
 <p>The vocabulary is published by the <a href="https://www.w3.org/community/n3-dev/">W3C Notation-3 Community Group</a>.</p>
 
 </div>
+<div class='historyNote'>
+<h2>
+Historical Note
+</h2>
+<p>Schema for string built-in functions in cwm.</p>
+
+</div>
 <section>
 <h2>Vocabulary Terms</h2>
 <section>
@@ -53,10 +64,18 @@ It is implemented, for example, in CWM and Euler.</p>
 <p>True iff the subject string contains the object string.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_containsIgnoringCase'>
@@ -70,10 +89,18 @@ with the comparison done ignoring the difference between upper case and
 lower case characters.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_endsWith'>
@@ -85,10 +112,18 @@ lower case characters.</p>
 <p>True iff the subject string ends with the object string.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_equalIgnoringCase'>
@@ -101,10 +136,18 @@ lower case characters.</p>
 ignoring differences between upper and lower case.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_greaterThan'>
@@ -116,10 +159,18 @@ ignoring differences between upper and lower case.</p>
 <p>True iff the string is greater than the object when ordered according to Unicode(tm) code order.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_lessThan'>
@@ -131,10 +182,18 @@ ignoring differences between upper and lower case.</p>
 <p>True iff the string is less than the object when ordered according to Unicode(tm) code order.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_matches'>
@@ -148,10 +207,18 @@ the object is is a regular expression in the perl, python style.
 It is true iff the string matches the regexp.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_notEqualIgnoringCase'>
@@ -164,10 +231,18 @@ It is true iff the string matches the regexp.</p>
 ignoring differences between upper and lower case.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_notGreaterThan'>
@@ -179,10 +254,18 @@ ignoring differences between upper and lower case.</p>
 <p>True iff the string is NOT greater than the object when ordered according to Unicode(tm) code order.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_notLessThan'>
@@ -194,10 +277,18 @@ ignoring differences between upper and lower case.</p>
 <p>True iff the string is NOT less than the object when ordered according to Unicode(tm) code order.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_notMatches'>
@@ -211,10 +302,18 @@ the object is is a regular expression in the perl, python style.
 It is true iff the string does NOT match the regexp.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_replace'>
@@ -229,10 +328,18 @@ input data, the second the old and the third the new string.
 The object is calculated as the replaced string.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre>("fofof bar", "of", "baz") string:replace "fbazbaz bar"</pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_scrape'>
@@ -248,10 +355,18 @@ the regular expression, then the object is calculated as being the
 part of the first string which matches the group.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:List</dd>
+<dd class='domain'>
+log:List
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 <dt id='string_startsWith'>
@@ -263,10 +378,18 @@ part of the first string which matches the group.</p>
 <p>True iff the subject string starts with the object string.</p>
 
 <dl class='annotations'>
+<dt>skos:example</dt>
+<dd class='example'>
+<pre></pre>
+</dd>
 <dt>rdfs:domain</dt>
-<dd>log:String</dd>
+<dd class='domain'>
+log:String
+</dd>
 <dt>rdfs:range</dt>
-<dd>log:String</dd>
+<dd class='range'>
+log:String
+</dd>
 </dl>
 </dd>
 </dl>
